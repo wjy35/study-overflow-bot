@@ -1,4 +1,4 @@
-package com.study.overflow.bot.alert.dto;
+package com.study.overflow.bot.alert;
 
 import lombok.*;
 import org.json.JSONException;

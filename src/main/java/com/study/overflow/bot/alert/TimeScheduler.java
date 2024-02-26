@@ -1,6 +1,5 @@
 package com.study.overflow.bot.alert;
 
-import com.study.overflow.bot.alert.dto.DiscordMessage;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -15,23 +14,23 @@ import java.net.URL;
 public class TimeScheduler {
     private final String WEBHOOK_URL;
 
-    @Scheduled(cron = "0 0 9-18 ? * MON-FRI",zone = "Asia/Seoul")
+    @Scheduled(cron = "0 0 9-17 ? * MON-FRI",zone = "Asia/Seoul")
     public void alertWork(){
         DiscordMessage message = DiscordMessage.builder()
                 .username("곽민규")
-                .content("일 할 시간이다 노예들아!")
-                .tts(false)
+                .content("이번 시간도 화이팅^^")
+                .tts(true)
                 .build();
 
         sendDiscordMessage(message);
     }
 
-    @Scheduled(cron = "0 50 9-18 ? * MON-FRI",zone = "Asia/Seoul")
+    @Scheduled(cron = "0 50 9-17 ? * MON-FRI",zone = "Asia/Seoul")
     public void alertRest(){
         DiscordMessage message = DiscordMessage.builder()
                 .username("곽민규")
-                .content("잠깐 쉬어라 노예들아!")
-                .tts(false)
+                .content("잠깐 쉬었다 합시다!")
+                .tts(true)
                 .build();
 
         sendDiscordMessage(message);
